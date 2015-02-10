@@ -1,0 +1,11 @@
+--- platform.c	2015-02-10 21:07:27.003605932 +0000
++++ platform-p.c	2015-02-10 21:10:22.363262699 +0000
+@@ -1688,7 +1688,7 @@
+ 
+ void	printStackTrace()
+ {
+-#if (defined(bionic) || defined(uClibc) || !(defined(linux)))
++#if (defined(bionic) || defined(__UCLIBC__) || !(defined(linux)))
+ 	writeMemo("[?] No stack trace available on this platform.");
+ #else
+ #define	MAX_TRACE_DEPTH	100

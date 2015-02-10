@@ -1,0 +1,20 @@
+--- platform.h	2015-02-10 21:06:17.883729009 +0000
++++ platform-p.h	2015-02-10 21:19:23.272698441 +0000
+@@ -33,7 +33,7 @@
+  *	ment (and only Windows development), whether within Visual
+  *	Studio or not.							*/
+ 
+-#ifdef uClibc
++#ifdef __UCLIBC__
+ #ifndef linux
+ #define linux
+ #endif
+@@ -515,7 +515,7 @@
+ #define PRIVATE_SYMTAB
+ 
+ #else				/****	Not bionic		     ****/
+-#ifdef uClibc			/****	uClibc subset of Linux	     ****/
++#ifdef __UCLIBC__			/****	uClibc subset of Linux	     ****/
+ #include <asm/param.h>		/****	...to get MAXHOSTNAMELEN     ****/
+ #include <sys/param.h>		/****	...to get MAXPATHLEN	     ****/
+ #else				/****	Not bionic and not uClibc    ****/
